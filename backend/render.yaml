@@ -2,6 +2,7 @@ services:
   - type: web
     name: shopnest-backend
     env: node
+    rootDir: backend
     buildCommand: npm install
     startCommand: npm start
     envVars:
@@ -11,5 +12,7 @@ services:
         sync: false
       - key: FRONTEND_URL
         sync: false
+      - key: PORT
+        value: 5000
       - key: NODE_ENV
         value: production
