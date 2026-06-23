@@ -1,0 +1,12 @@
+.page-title { margin-bottom: 20px; }
+.orders-list { display:flex; flex-direction:column; gap:16px; }
+.order-card { background: rgba(255,255,255,0.03); padding:16px; border-radius:8px; border:1px solid rgba(99,102,241,0.15); }
+.order-row { display:flex; justify-content:space-between; margin-bottom:8px; }
+.status { padding:4px 8px; border-radius:12px; text-transform:capitalize; }
+.status.pending { background:#f3f4f6; color:#111827 }
+.status.processing { background:#fde68a; color:#92400e }
+.status.shipped { background:#bfdbfe; color:#1e3a8a }
+.status.delivered { background:#bbf7d0; color:#065f46 }
+.order-items { margin-top:8px; border-top:1px solid rgba(255,255,255,0.03); padding-top:8px; }
+.order-item { display:flex; justify-content:space-between; margin-bottom:6px; }
+.empty-state { text-align:center; padding:40px 0; }

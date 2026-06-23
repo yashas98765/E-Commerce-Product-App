@@ -1,0 +1,136 @@
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 28px;
+  padding: 0;
+  transition: color var(--transition);
+}
+.back-btn:hover { color: var(--text); }
+
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.detail-img-wrap {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 4/3;
+  background: var(--bg-card);
+}
+
+.detail-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(245,158,11,0.9);
+  color: #000;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.detail-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-count { font-size: 14px; color: var(--text-muted); }
+
+.detail-price {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.detail-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.detail-stock { display: flex; }
+
+.qty-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.qty-row label { font-size: 14px; font-weight: 600; color: var(--text-muted); }
+
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.qty-btn {
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.05);
+  border: none;
+  color: var(--text);
+  font-size: 18px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.qty-btn:hover { background: rgba(99,102,241,0.2); }
+
+.qty-val {
+  width: 44px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  padding: 0 8px;
+  line-height: 36px;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .product-detail {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .detail-name { font-size: 22px; }
+  .detail-price { font-size: 28px; }
+}
