@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchOrderById, adminUpdateOrderStatus, adminUpdateOrder } from '../utils/api';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 import './OrderDetailPage.css';
@@ -10,7 +10,6 @@ export default function OrderDetailPage() {
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(true);
   const { user } = useAuth();
-  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);

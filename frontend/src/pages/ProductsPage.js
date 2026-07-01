@@ -13,7 +13,7 @@ const SORT_OPTIONS = [
 ];
 
 export default function ProductsPage() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pagination, setPagination] = useState({});

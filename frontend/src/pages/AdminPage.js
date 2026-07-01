@@ -45,18 +45,7 @@ export default function AdminPage() {
 
   useEffect(() => { loadProducts(); }, [loadProducts]);
 
-  useEffect(() => {
-    if (tab === 'stats') {
-      adminFetchStats()
-        .then(res => setStats(res.data.stats))
-        .catch(() => toast.error('Failed to load stats'));
-    }
-    if (tab === 'orders') {
-      loadOrders();
-    }
-  }, [tab]);
-
-  const loadOrders = async () => {
+  const loadOrders = useCallback(async () => {
     setOrdersLoading(true);
     try {
       const params = {};
@@ -69,7 +58,18 @@ export default function AdminPage() {
     } finally {
       setOrdersLoading(false);
     }
-  };
+  }, [orderFilterStatus, orderFilterEmail]);
+
+  useEffect(() => {
+    if (tab === 'stats') {
+      adminFetchStats()
+        .then(res => setStats(res.data.stats))
+        .catch(() => toast.error('Failed to load stats'));
+    }
+    if (tab === 'orders') {
+      loadOrders();
+    }
+  }, [tab, loadOrders]);
 
   // Debounce search
   const [searchInput, setSearchInput] = useState('');

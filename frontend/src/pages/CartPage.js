@@ -111,7 +111,7 @@ export default function CartPage() {
                 }
                 const items = cartItems.map(i => ({ product: i._id, name: i.name, price: i.price, quantity: i.quantity }));
                 const total = parseFloat((cartTotal * 1.08).toFixed(2));
-                const res = await createOrder({ items, total, paymentMethod: 'demo' });
+                await createOrder({ items, total, paymentMethod: 'demo' });
                 clearCart();
                 toast.success('🎉 Order placed!');
                 navigate('/orders');
