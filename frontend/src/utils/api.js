@@ -12,7 +12,16 @@ API.interceptors.request.use((config) => {
 });
 
 // Products
-export const fetchProducts = (params) => API.get('/products', { params });
+export const fetchProducts = async (params) => {
+  try {
+    const res = await API.get('/products', { params });
+    // Ensure we return a consistent shape even if the response isn't as expected
+    if (res && res.data && (res.data.products || Array.isArray(res.data))) return res;
+    return { data: { products: [] } };
+  } catch (err) {
+    return { data: { products: [] } };
+  }
+};
 export const fetchProductById = (id) => API.get(`/products/${id}`);
 export const fetchCategories = () => API.get('/products/categories');
 
